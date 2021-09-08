@@ -1,6 +1,6 @@
 import html
 import random
-import innexiaBot.modules.truth_and_dare_string as truth_and_dare_string
+import kgbot.modules.truth_and_dare_string as truth_and_dare_string
 from kgbot import dispatcher
 from telegram import ParseMode, Update, Bot
 from kgbot.modules.disable import DisableAbleCommandHandler
