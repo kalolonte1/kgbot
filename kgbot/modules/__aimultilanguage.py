@@ -11,10 +11,10 @@ import aiohttp
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from innexiaBot import BOT_ID
-from innexiaBot.helper_extra.aichat import add_chat, get_session, remove_chat
-from innexiaBot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from innexiaBot import pbot as innexia
+from kgbot import BOT_ID
+from kgbot.helper_extra.aichat import add_chat, get_session, remove_chat
+from kgbot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from kgbot import pbot as innexia
 
 translator = google_translator()
 import requests
