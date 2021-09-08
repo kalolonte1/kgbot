@@ -1,7 +1,7 @@
 import html
 from typing import Optional
 
-import innexiaBot.modules.sql.blsticker_sql as sql
+import kgbot.modules.sql.blsticker_sql as sql
 from kgbot import LOGGER, dispatcher
 from kgbot.modules.connection import connected
 from kgbot.modules.disable import DisableAbleCommandHandler
