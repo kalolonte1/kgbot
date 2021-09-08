@@ -1,4 +1,4 @@
-import innexiaBot.modules.sql.blacklistusers_sql as sql
+import kgbot.modules.sql.blacklistusers_sql as sql
 from kgbot import ALLOW_EXCL
 from kgbot import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
