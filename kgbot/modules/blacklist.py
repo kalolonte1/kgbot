@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-import innexiaBot.modules.sql.blacklist_sql as sql
+import kgbot.modules.sql.blacklist_sql as sql
 from kgbot import dispatcher, LOGGER
 from kgbot.modules.disable import DisableAbleCommandHandler
 from kgbot.modules.helper_funcs.chat_status import user_admin, user_not_admin

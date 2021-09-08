@@ -3,7 +3,7 @@ from io import BytesIO
 import random
 from typing import Optional
 
-import innexiaBot.modules.sql.notes_sql as sql
+import kgbot.modules.sql.notes_sql as sql
 from kgbot import LOGGER, JOIN_LOGGER, SUPPORT_CHAT, dispatcher, DRAGONS
 from kgbot.modules.disable import DisableAbleCommandHandler
 from kgbot.modules.helper_funcs.handlers import MessageHandlerChecker

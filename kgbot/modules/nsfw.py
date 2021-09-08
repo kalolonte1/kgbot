@@ -5,7 +5,7 @@ import requests
 from PIL import Image
 from telegram import ParseMode
 from kgbot import dispatcher, updater
-import innexiaBot.modules.sql.nsfw_sql as sql
+import kgbot.modules.sql.nsfw_sql as sql
 from kgbot.modules.log_channel import gloggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized

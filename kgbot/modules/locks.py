@@ -9,7 +9,7 @@ from telegram.utils.helpers import mention_html
 
 from alphabet_detector import AlphabetDetector
 
-import innexiaBot.modules.sql.locks_sql as sql
+import kgbot.modules.sql.locks_sql as sql
 from kgbot import dispatcher, DRAGONS, LOGGER
 from kgbot.modules.disable import DisableAbleCommandHandler
 from kgbot.modules.helper_funcs.chat_status import (

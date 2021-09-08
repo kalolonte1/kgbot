@@ -25,7 +25,7 @@ from kgbot import (
     sw,
 )
 from kgbot.__main__ import STATS, TOKEN, USER_INFO
-import innexiaBot.modules.sql.userinfo_sql as sql
+import kgbot.modules.sql.userinfo_sql as sql
 from kgbot.modules.disable import DisableAbleCommandHandler
 from kgbot.modules.sql.global_bans_sql import is_user_gbanned
 from kgbot.modules.sql.afk_sql import is_afk, check_afk_status

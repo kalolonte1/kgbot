@@ -44,7 +44,7 @@ import os
 import aiofiles
 import aiohttp
 from pyrogram import filters
-from kgbot import pbot as innexia
+from kgbot import pbot as kgbot
 
 ARQ = "https://thearq.tech/"
 
@@ -68,7 +68,7 @@ async def download_song(url):
     return song_name
 
 
-@innexia.on_message(filters.command("deezer"))
+@kgbot.on_message(filters.command("deezer"))
 async def deezer(_, message):
     if len(message.command) < 2:
         await message.reply_text("Download Now Deezer")
@@ -122,7 +122,7 @@ async def download_song(url):
     return song_name
 
 
-@innexia.on_message(filters.command("deezer"))
+@kgbot.on_message(filters.command("deezer"))
 async def deezer(_, message):
     if len(message.command) < 2:
         await message.reply_text("Download Now Deezer")

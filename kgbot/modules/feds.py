@@ -6,7 +6,7 @@ import time
 import uuid
 from io import BytesIO
 
-import innexiaBot.modules.sql.feds_sql as sql
+import kgbot.modules.sql.feds_sql as sql
 from kgbot import (
     EVENT_LOGS,
     LOGGER,

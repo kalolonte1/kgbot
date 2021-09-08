@@ -3,7 +3,7 @@ from kgbot.modules.disable import DisableAbleCommandHandler
 from kgbot import dispatcher, DRAGONS
 from kgbot.modules.helper_funcs.extraction import extract_user
 from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, run_async
-import innexiaBot.modules.sql.approve_sql as sql
+import kgbotBot.modules.sql.approve_sql as sql
 from kgbot.modules.helper_funcs.chat_status import user_admin
 from kgbot.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
