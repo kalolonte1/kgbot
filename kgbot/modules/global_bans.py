@@ -14,7 +14,7 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import innexiaBot.modules.sql.global_bans_sql as sql
+import kgbot.modules.sql.global_bans_sql as sql
 from kgbot.modules.sql.users_sql import get_user_com_chats
 from kgbot import (
     DEV_USERS,
