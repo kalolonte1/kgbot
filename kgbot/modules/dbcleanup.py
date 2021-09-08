@@ -1,7 +1,7 @@
 from time import sleep
 
-import innexiaBot.modules.sql.global_bans_sql as gban_sql
-import innexiaBot.modules.sql.users_sql as user_sql
+import kgbot.modules.sql.global_bans_sql as gban_sql
+import kgbot.modules.sql.users_sql as user_sql
 from kgbot import DEV_USERS, OWNER_ID, dispatcher
 from kgbot.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
