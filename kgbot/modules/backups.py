@@ -5,22 +5,22 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-import innexiaBot.modules.sql.notes_sql as sql
+import kgbot.modules.sql.notes_sql as sql
 from kgbot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
 from kgbot.__main__ import DATA_IMPORT
 from kgbot.modules.helper_funcs.chat_status import user_admin
 from kgbot.modules.helper_funcs.alternate import typing_action
 
 # from kgbot.modules.rules import get_rules
-import innexiaBot.modules.sql.rules_sql as rulessql
+import kgbot.modules.sql.rules_sql as rulessql
 
 # from kgbot.modules.sql import warns_sql as warnssql
-import innexiaBot.modules.sql.blacklist_sql as blacklistsql
+import kgbot.modules.sql.blacklist_sql as blacklistsql
 from kgbot.modules.sql import disable_sql as disabledsql
 
 # from kgbot.modules.sql import cust_filters_sql as filtersql
-# import innexiaBot.modules.sql.welcome_sql as welcsql
-import innexiaBot.modules.sql.locks_sql as locksql
+# import kgbot.modules.sql.welcome_sql as welcsql
+import kgbot.modules.sql.locks_sql as locksql
 from kgbot.modules.connection import connected
 
 
@@ -325,7 +325,7 @@ def export_data(update, context):
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    with open("innexiaBot{}.backup".format(chat_id), "w") as f:
+    with open("kgbot{}.backup".format(chat_id), "w") as f:
         f.write(str(baccinfo))
     context.bot.sendChatAction(current_chat_id, "upload_document")
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
@@ -341,15 +341,15 @@ def export_data(update, context):
         pass
     context.bot.sendDocument(
         current_chat_id,
-        document=open("innexiaBot{}.backup".format(chat_id), "rb"),
-        caption="💾*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `innexiaBot-Backup` was specially made for notes 📚.".format(
+        document=open("kgbot{}.backup".format(chat_id), "rb"),
+        caption="💾*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `kgbot-Backup` was specially made for notes 📚.".format(
             chat.title, chat_id, tgl
         ),
         timeout=360,
         reply_to_message_id=msg.message_id,
         parse_mode=ParseMode.MARKDOWN,
     )
-    os.remove("innexiaBot{}.backup".format(chat_id))  # Cleaning file
+    os.remove("kgbot{}.backup".format(chat_id))  # Cleaning file
 
 
 # Temporary data
