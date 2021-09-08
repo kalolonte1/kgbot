@@ -2,7 +2,7 @@ import html
 import random
 import time
 
-import innexiaBot.modules.fun_strings as fun_strings
+import kgbot.modules.fun_strings as fun_strings
 from kgbot import dispatcher
 from kgbot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from kgbot.modules.helper_funcs.chat_status import is_user_admin
@@ -13,7 +13,7 @@ from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async, CommandHandler, Filters
 
-import innexiaBot.modules.helper_funcs.string_store as fun
+import kgbot.modules.helper_funcs.string_store as fun
 
 GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE"
 
