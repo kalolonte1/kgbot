@@ -5,7 +5,7 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-import innexiaBot
+import kgbot
 
 from kgbot import dispatcher
 from kgbot.modules.helper_funcs.chat_status import dev_plus
@@ -18,12 +18,12 @@ from telegram.ext import CallbackContext, CommandHandler, run_async
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        update.effective_message.reply_text(f"Current state: {innexiaBot.ALLOW_CHATS}")
+        update.effective_message.reply_text(f"Current state: {kgbot.ALLOW_CHATS}")
         return
     if args[0].lower() in ["off", "no"]:
-        innexiaBot.ALLOW_CHATS = True
+        kgbot.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        innexiaBot.ALLOW_CHATS = False
+        kgbot.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
