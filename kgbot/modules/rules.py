@@ -1,6 +1,6 @@
 from typing import Optional
 
-import innexiaBot.modules.sql.rules_sql as sql
+import kgbot.modules.sql.rules_sql as sql
 from kgbot import dispatcher
 from kgbot.modules.helper_funcs.chat_status import user_admin
 from kgbot.modules.helper_funcs.string_handling import markdown_parser
