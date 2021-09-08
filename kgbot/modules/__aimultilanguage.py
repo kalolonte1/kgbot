@@ -14,7 +14,7 @@ from pyrogram import filters
 from kgbot import BOT_ID
 from kgbot.helper_extra.aichat import add_chat, get_session, remove_chat
 from kgbot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from kgbot import pbot as innexia
+from kgbot import pbot as kgbot
 
 translator = google_translator()
 import requests
@@ -39,15 +39,15 @@ async def fetch(url):
         return
 
 
-innexia_chats = []
+kgbot_chats = []
 en_chats = []
 
-@innexia.on_message(
+@kgbot.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @admins_only
 async def hmm(_, message):
-    global innexia_chats
+    global kgbot_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -59,20 +59,20 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("innexia AI Already Activated In This Chat")
+            await lel.edit("kgbot AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"innexia AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"kgbot AI Successfully Added For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("innexia AI Was Not Activated In This Chat")
+            await lel.edit("kgbot AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"innexia AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"kgbot AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -88,7 +88,7 @@ async def hmm(_, message):
         )
 
 
-@innexia.on_message(
+@kgbot.on_message(
     filters.text
     & filters.reply
     & ~filters.bot
@@ -114,8 +114,8 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("innexia", "Aco")
-        test = test.replace("innexia", "Aco")
+        test = test.replace("kgbot", "Aco")
+        test = test.replace("kgbot", "Aco")
         URL = "https://api.affiliateplus.xyz/api/chatbot?message=hi&botname=@kgbot&ownername=@useIes"
 
         try:
@@ -130,7 +130,7 @@ async def hmm(client, message):
 
         pro = result["message"]
         try:
-            await innexia.send_chat_action(message.chat.id, "typing")
+            await kgbot.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -177,8 +177,8 @@ async def hmm(client, message):
         # test = emoji.demojize(test.strip())
 
         # Kang with the credits bitches @InukaASiTH
-        test = test.replace("innexia", "Aco")
-        test = test.replace("innexia", "Aco")
+        test = test.replace("kgbot", "Aco")
+        test = test.replace("kgbot", "Aco")
         URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@kgbot&ownername=@useIes"
         try:
             r = requests.request("GET", url=URL)
@@ -196,13 +196,13 @@ async def hmm(client, message):
             except:
                 return
         try:
-            await innexia.send_chat_action(message.chat.id, "typing")
+            await kgbot.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
 
 
-@innexia.on_message(
+@kgbot.on_message(
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
 async def inuka(client, message):
@@ -251,8 +251,8 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("innexia", "Aco")
-    test = test.replace("innexia", "Aco")
+    test = test.replace("kgbot", "Aco")
+    test = test.replace("kgbot", "Aco")
     URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@kgbot&ownername=@useIes"
     try:
         r = requests.request("GET", url=URL)
@@ -268,14 +268,14 @@ async def inuka(client, message):
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await innexia.send_chat_action(message.chat.id, "typing")
+        await kgbot.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
 
 
-@innexia.on_message(
-    filters.regex("innexia|innexia|innexia|innexia|innexia")
+@kgbot.on_message(
+    filters.regex("kgbot|kgbot|kgbot|kgbot|kgbot")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -329,8 +329,8 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("innexia", "Aco")
-    test = test.replace("innexia", "Aco")
+    test = test.replace("kgbot", "Aco")
+    test = test.replace("kgbot", "Aco")
     URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@kgbot&ownername=@useIes"
     try:
         r = requests.request("GET", url=URL)
@@ -348,7 +348,7 @@ async def inuka(client, message):
         except Exception:
             return
     try:
-        await innexia.send_chat_action(message.chat.id, "typing")
+        await kgbot.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
@@ -356,7 +356,7 @@ async def inuka(client, message):
 
 __help__ = """
 <b> Chatbot </b>
-innexia AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
+kgbot AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
  - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
  - /chatbot EN : Enables English only chatbot
  
