@@ -11,7 +11,7 @@ from telegram.ext import (
     run_async,
 )
 
-import innexiaBot.modules.sql.users_sql as sql
+import kgbot.modules.sql.users_sql as sql
 from kgbot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
 from kgbot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from kgbot.modules.sql.users_sql import get_all_users
