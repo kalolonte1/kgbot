@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-INNEXIA_IMG = "https://telegra.ph/file/8b6f8f2bb4ff3912634c7.jpg"
+kgbot_IMG = "https://telegra.ph/file/8b6f8f2bb4ff3912634c7.jpg"
 
 PM_START_TEXT = """
 👋 **Hai Saya** 𝙆𝙂𝙎𝙐𝙋𝙀𝙍𝘽𝙊𝙏\n\n**Saya sangat cepat dan lebih efisien.**\n**Dan saya mempunyai banyak fitur yang akan membantu anda mengelola group anda.**
@@ -89,9 +89,9 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="⌜ᴀʙᴏᴜᴛ⌟", callback_data="innexia_"),
+        InlineKeyboardButton(text="⌜ᴀʙᴏᴜᴛ⌟", callback_data="kgbot_"),
         InlineKeyboardButton(
-            text="⌜ʙᴀsɪᴄ ʜᴇʟᴘ⌟", callback_data="innexia_basichelp"
+            text="⌜ʙᴀsɪᴄ ʜᴇʟᴘ⌟", callback_data="kgbot_basichelp"
         ),
     ],
     [
@@ -217,7 +217,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            INNEXIA_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            kgbot_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -350,9 +350,9 @@ def help_button(update, context):
 
 
 @run_async
-def innexia_about_callback(update, context):
+def kgbot_about_callback(update, context):
     query = update.callback_query
-    if query.data == "innexia_":
+    if query.data == "kgbot_":
         query.message.edit_text(
             text=""" 𝙆𝙂𝙎𝙐𝙋𝙀𝙍𝘽𝙊𝙏 - A bot to manage your groups with additional features!
             \nHere's the basic help regarding use of KGSUPERBOT.
@@ -371,11 +371,11 @@ def innexia_about_callback(update, context):
                             text="ᴄʜᴀɴɴᴇʟ", url="t.me/rakasupport"
                         ),
                     ],
-                    [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="innexia_back")],
+                    [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="kgbot_back")],
                 ]
             ),
         )
-    elif query.data == "innexia_back":
+    elif query.data == "kgbot_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -384,7 +384,7 @@ def innexia_about_callback(update, context):
                 disable_web_page_preview=False,
         )
 
-    elif query.data == "innexia_basichelp":
+    elif query.data == "kgbot_basichelp":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
@@ -397,24 +397,24 @@ def innexia_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="innexia_admin"),
-                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="innexia_notes"),
+                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="kgbot_admin"),
+                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="kgbot_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="innexia_support"),
-                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="innexia_credit"),
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="kgbot_support"),
+                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="kgbot_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="innexia_back"),
+                    InlineKeyboardButton(text="Back", callback_data="kgbot_back"),
                  
                  ]
                 ]
             ),
         )
-    elif query.data == "innexia_admin":
+    elif query.data == "kgbot_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
-            f"\nCongragulations, Innexia now ready to manage your group."
+            f"\nCongragulations, kgbot now ready to manage your group."
             f"\n\n*Admin Tools*"
             f"\nBasic Admin tools help you to protect and powerup your group."
             f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -424,11 +424,11 @@ def innexia_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="kgbot_basichelp")]]
             ),
         )
 
-    elif query.data == "innexia_notes":
+    elif query.data == "kgbot_notes":
         query.message.edit_text(
             text=f"<b> Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -436,10 +436,10 @@ def innexia_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="kgbot_basichelp")]]
             ),
         )
-    elif query.data == "innexia_support":
+    elif query.data == "kgbot_support":
         query.message.edit_text(
             text="* KG support chats*"
             "\nJoin Support Group/Channel",
@@ -455,13 +455,13 @@ def innexia_about_callback(update, context):
                     InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/knsgnwn"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="kgbot_basichelp"),
                  
                  ]
                 ]
             ),
         )
-    elif query.data == "innexia_credit":
+    elif query.data == "kgbot_credit":
         query.message.edit_text(
             text=f"<b> CREDIT FOR KG DEV'S</b>\n"
             f"\nHere Some Developers Helping in Making The KGSUPERBOT",
@@ -477,7 +477,7 @@ def innexia_about_callback(update, context):
                     InlineKeyboardButton(text="ᴇx", url="t.me/rizexx"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="kgbot_basichelp"),
                  
                  ]
                 ]
@@ -809,7 +809,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(innexia_about_callback, pattern=r"innexia_")
+    about_callback_handler = CallbackQueryHandler(kgbot_about_callback, pattern=r"kgbot_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
